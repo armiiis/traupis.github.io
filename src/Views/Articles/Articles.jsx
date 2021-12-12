@@ -1,29 +1,35 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 export const Articles = ({ articles = [] }) => {
-  // const getArticles = async () => {
-  //   const url = "http://127.0.0.1:3001/articles";
-  //   await fetch(url).then(async (res) => {
-  //     const data = await res.json();
-  //     onArticlesLoaded(data.articles);
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   if (!articles.length) {
-  //     getArticles();
-  //   }
-  // }, [articles]);
+  const [search, setSearch] = useState("");
 
   return (
-    <ul style={{ display: "flex", flexDirection: "column" }}>
-      {articles.map((article) => (
-        <Link key={article.id} component="li" to={`/articles/${article.id}`}>
-          <span>{article.id}: </span>
-          <span>{article.title}</span>
-        </Link>
-      ))}
-    </ul>
+    <div>
+      <div style={{ padding: 10, margin: "10px 0 0 35px" }}>
+        <label htmlFor="search">PAIEŠKA: </label>
+        <input
+          onChange={(e) => setSearch(e.target.value)}
+          id="search"
+          value={search}
+          style={{ padding: 10 }}
+        />
+      </div>
+
+      <ul style={{ display: "flex", flexDirection: "column" }}>
+        {articles
+          .filter((article) => article.title.includes(search))
+          .map((article) => (
+            <Link
+              key={article.id}
+              component="li"
+              to={`/articles/${article.id}`}
+            >
+              <span>{article.id}: </span>
+              <span>{article.title}</span>
+            </Link>
+          ))}
+      </ul>
+    </div>
   );
 };
