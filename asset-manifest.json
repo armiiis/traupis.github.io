@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/traupis.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/traupis.github.io/static/js/main.2d4d1cca.chunk.js",
-    "main.js.map": "/traupis.github.io/static/js/main.2d4d1cca.chunk.js.map",
+    "main.js": "/traupis.github.io/static/js/main.ebde4b98.chunk.js",
+    "main.js.map": "/traupis.github.io/static/js/main.ebde4b98.chunk.js.map",
     "runtime-main.js": "/traupis.github.io/static/js/runtime-main.96368e9a.js",
     "runtime-main.js.map": "/traupis.github.io/static/js/runtime-main.96368e9a.js.map",
     "static/js/2.4f1dc1b5.chunk.js": "/traupis.github.io/static/js/2.4f1dc1b5.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.96368e9a.js",
     "static/js/2.4f1dc1b5.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.2d4d1cca.chunk.js"
+    "static/js/main.ebde4b98.chunk.js"
   ]
 }
