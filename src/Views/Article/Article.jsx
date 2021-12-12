@@ -1,10 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+// need to handle multiple gallery in one article (located in .introtext)
+// and insert in corresponding html?
+const getGalleryPath = (article) => {
+  const str = article?.fulltext || "";
+  return str.substring(
+    str.indexOf("{gallery}") + "{gallery}".length,
+    str.lastIndexOf("{/gallery}")
+  );
+};
+
+const getGalleryPaths = (gallery = null, paths) => {
+  if (!gallery) {
+    return [];
+  }
+
+  if (gallery) {
+    return paths.filter((el) => el.includes(gallery));
+  }
+
+  return [];
+};
+
+const cleanupHtml = (str, gallery = "") =>
+  str
+    .replaceAll("{mosimage}", "")
+    .replaceAll("{gallery}", "")
+    .replaceAll("{/gallery}", "")
+    .replaceAll(gallery, "");
+
 export const Article = ({ articles, paths, onGetArticles, onGetPaths }) => {
   const { id } = useParams();
-  // const [article, setArticle] = useState();
   const [article, setArticle] = useState();
+  const [galleryPath, setGalleryPath] = useState();
 
   useEffect(() => {
     if (!articles.length) {
@@ -16,6 +45,10 @@ export const Article = ({ articles, paths, onGetArticles, onGetPaths }) => {
     if (!article) {
       const found = articles.find((el) => el.id === id);
       setArticle(found);
+      const hasGallery = getGalleryPath(found);
+      if (hasGallery) {
+        setGalleryPath(hasGallery);
+      }
     }
   }, [article, articles]);
 
@@ -34,12 +67,12 @@ export const Article = ({ articles, paths, onGetArticles, onGetPaths }) => {
       <h1>{article.title}</h1>
       <p
         dangerouslySetInnerHTML={{
-          __html: article.introtext.replaceAll("{mosimage}", ""),
+          __html: cleanupHtml(article.introtext, galleryPath),
         }}
       />
       <p
         dangerouslySetInnerHTML={{
-          __html: article.fulltext.replaceAll("{mosimage}", ""),
+          __html: cleanupHtml(article.fulltext, galleryPath),
         }}
       />
 
@@ -51,6 +84,14 @@ export const Article = ({ articles, paths, onGetArticles, onGetPaths }) => {
         return (
           <div style={{ textAlign: "center" }}>
             <img src={`${process.env.PUBLIC_URL}/${match}`} />
+          </div>
+        );
+      })}
+
+      {getGalleryPaths(galleryPath, paths).map((path) => {
+        return (
+          <div style={{ textAlign: "center" }}>
+            <img src={`${process.env.PUBLIC_URL}/${path}`} />
           </div>
         );
       })}
