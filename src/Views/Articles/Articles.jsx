@@ -6,13 +6,14 @@ export const Articles = ({ articles = [] }) => {
 
   return (
     <div>
-      <div style={{ padding: 10, margin: "10px 0 0 35px" }}>
-        <label htmlFor="search">PAIEŠKA: </label>
+      <h1 style={{ textAlign: "center" }}>Traupis.lt archyvas</h1>
+      <div style={{ textAlign: "center", padding: 10 }}>
         <input
           onChange={(e) => setSearch(e.target.value)}
           id="search"
           value={search}
-          style={{ padding: 10 }}
+          style={{ padding: 4, fontSize: 20 }}
+          placeholder="Paieška"
         />
       </div>
 
