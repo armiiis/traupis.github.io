@@ -1,8 +1,18 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Articles = ({ articles = [] }) => {
   const [search, setSearch] = useState("");
+
+  const sorted = useMemo(
+    () =>
+      articles.sort((a, b) => {
+        const format = (str) => str.title.toUpperCase();
+
+        return format(a).localeCompare(format(b));
+      }),
+    [articles]
+  );
 
   return (
     <div>
@@ -18,16 +28,20 @@ export const Articles = ({ articles = [] }) => {
       </div>
 
       <ul style={{ display: "flex", flexDirection: "column" }}>
-        {articles
-          .filter((article) => article.title.includes(search))
+        {sorted
+          .filter((article) =>
+            article.title.toUpperCase().includes(search.toUpperCase())
+          )
           .map((article) => (
             <Link
               key={article.id}
               component="li"
               to={`/articles/${article.id}`}
             >
-              <span>{article.id}: </span>
               <span>{article.title}</span>
+              <span style={{ paddingLeft: 10, opacity: 0.3 }}>
+                ({article.id})
+              </span>
             </Link>
           ))}
       </ul>
