@@ -1,23 +1,22 @@
 {
   "files": {
     "main.css": "/traupis.github.io/static/css/main.a617e044.chunk.css",
-    "main.js": "/traupis.github.io/static/js/main.7627a880.chunk.js",
-    "main.js.map": "/traupis.github.io/static/js/main.7627a880.chunk.js.map",
-    "runtime-main.js": "/traupis.github.io/static/js/runtime-main.b5199e5d.js",
-    "runtime-main.js.map": "/traupis.github.io/static/js/runtime-main.b5199e5d.js.map",
-    "static/js/2.18dec2a3.chunk.js": "/traupis.github.io/static/js/2.18dec2a3.chunk.js",
-    "static/js/2.18dec2a3.chunk.js.map": "/traupis.github.io/static/js/2.18dec2a3.chunk.js.map",
-    "static/js/3.86ae860d.chunk.js": "/traupis.github.io/static/js/3.86ae860d.chunk.js",
-    "static/js/3.86ae860d.chunk.js.map": "/traupis.github.io/static/js/3.86ae860d.chunk.js.map",
+    "main.js": "/traupis.github.io/static/js/main.3bd2ee9c.chunk.js",
+    "main.js.map": "/traupis.github.io/static/js/main.3bd2ee9c.chunk.js.map",
+    "runtime-main.js": "/traupis.github.io/static/js/runtime-main.1de73a04.js",
+    "runtime-main.js.map": "/traupis.github.io/static/js/runtime-main.1de73a04.js.map",
+    "static/js/2.0834345e.chunk.js": "/traupis.github.io/static/js/2.0834345e.chunk.js",
+    "static/js/2.0834345e.chunk.js.map": "/traupis.github.io/static/js/2.0834345e.chunk.js.map",
+    "static/js/3.0e1e9f31.chunk.js": "/traupis.github.io/static/js/3.0e1e9f31.chunk.js",
+    "static/js/3.0e1e9f31.chunk.js.map": "/traupis.github.io/static/js/3.0e1e9f31.chunk.js.map",
     "index.html": "/traupis.github.io/index.html",
     "static/css/main.a617e044.chunk.css.map": "/traupis.github.io/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.18dec2a3.chunk.js.LICENSE.txt": "/traupis.github.io/static/js/2.18dec2a3.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/traupis.github.io/static/media/logo.6ce24c58.svg"
+    "static/js/2.0834345e.chunk.js.LICENSE.txt": "/traupis.github.io/static/js/2.0834345e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b5199e5d.js",
-    "static/js/2.18dec2a3.chunk.js",
+    "static/js/runtime-main.1de73a04.js",
+    "static/js/2.0834345e.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.7627a880.chunk.js"
+    "static/js/main.3bd2ee9c.chunk.js"
   ]
 }
